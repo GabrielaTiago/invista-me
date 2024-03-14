@@ -7,4 +7,11 @@ def home(request):
     return HttpResponse('Home Page!!')
 
 def about(request):
-    return render(request, 'hero/about.html')
+    user = {
+        'first_name': 'Gabriela',
+        'last_name': 'Tiago',
+        'email': 'gabriela@email.com',
+        'age': 22,
+        'job': 'Developer',
+    }
+    return render(request, 'hero/about.html', user)

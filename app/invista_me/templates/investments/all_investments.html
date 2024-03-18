@@ -1,0 +1,24 @@
+<body>
+    <h2>Inevestimentos:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Tipo</th>
+                <th>Valor</th>
+                <th>Data</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for d in data %}
+                <tr>
+                    <td>{{d.id }}</td>
+                    <td>{{ d.name }}</td>
+                    <td>{{ d.type }}</td>
+                    <td>R$ {{ d.value }}</td>
+                    <td>{{ d.date }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+</body>

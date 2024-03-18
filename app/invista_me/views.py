@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Investment
 
 # Create your views here.
 
@@ -28,3 +29,9 @@ def registered_investment(request):
         'value': request.POST.get('value')
     }
     return render(request, 'investments/registered_investment.html', investment)
+
+def all_investments(request):
+    data = {
+        'data': Investment.objects.all()
+    }
+    return render(request, 'investments/all_investments.html', context=data)
